@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var Battery = function (energy) {
+        this.energy=energy;
+
+        this.setEnergy = function () {
+            this.energy;
+        }
+
+        this.getEnergy = function () {
+            return this.energy;
+        }
+
+        this.decreaseEnergy = function () {
+            if (this.energy > 0) {
+                this.energy--
+            }
+        }
+    }
+
+    var FlastLamp = function () {
+
+        this.setBattery = function (battery) {
+            this.bettery = battery;
+        }
+
+        this.getBatteryInfor = function () {
+            return this.bettery.getEnergy();
+        }
+
+        this.light = function () {
+            if (this.status) {
+                alert("Light");
+            } else alert("Not light")
+        }
+        this.turnOn = function () {
+            return this.status = true;
+        }
+
+        this.turnOff = function () {
+            return this.status = false;
+        }
+
+    }
+
+    var bettery = new Battery(10);
+    bettery.setEnergy();
+
+    var flastLamp = new FlastLamp();
+
+    flastLamp.setBattery(bettery);
+
+    document.write("Bettery infor: " + flastLamp.getBatteryInfor()+"<br/>");
+
+    flastLamp.light();
+
+    document.write("Turn On <br/>");
+
+    flastLamp.turnOn();
+    flastLamp.light();
+    bettery.decreaseEnergy();
+    document.write("Bettery infor: "+ flastLamp.getBatteryInfor()+"<br/>");
+
+    document.write("Turn Off <br/>");
+    flastLamp.turnOff();
+    flastLamp.light();
+
+</script>
+</body>
+</html>
